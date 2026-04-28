@@ -14,7 +14,7 @@ function App() {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/customers");
+      const res = await axios.get("https://customer-dashboard-u8nq.onrender.com/customers");
       setCustomers(res.data);
     } catch (err) {
       setSnackbar({

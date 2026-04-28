@@ -23,7 +23,7 @@ export default function CustomerForm({ fetchCustomers }) {
             return;
         }
         try {
-            await axios.post("http://localhost:5000/customers", form);
+            await axios.post("https://customer-dashboard-u8nq.onrender.com/customers", form);
             setForm({ name: "", email: "", phone: "" });
             setSnackbar({ message: "Customer added successfully", type: "success" });
             fetchCustomers();

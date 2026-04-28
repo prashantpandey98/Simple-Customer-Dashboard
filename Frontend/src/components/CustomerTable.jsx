@@ -18,7 +18,7 @@ export default function CustomerTable({ customers, fetchCustomers }) {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:5000/customers/${selectedId}`);
+      await axios.delete(`https://customer-dashboard-u8nq.onrender.com/customers/${selectedId}`);
       fetchCustomers();
     } catch (err) {
       console.log("Error deleting customer:", err);
@@ -31,14 +31,14 @@ export default function CustomerTable({ customers, fetchCustomers }) {
   return (
     <>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
+        {customers.length>0 && <thead>
           <tr>
             <th style={cellStyle}>Name</th>
             <th style={cellStyle}>Email</th>
             <th style={cellStyle}>Phone</th>
             <th style={cellStyle}>Action</th>
           </tr>
-        </thead>
+        </thead>}
         <tbody>
           {customers.map((customer) => (
             <tr key={customer.id}>
