@@ -8,13 +8,9 @@ export default function Snackbar({ message, type, onClose }) {
   }, [message, onClose]);
 
   if (!message) return null;
-  const bg = type === "error" ? "red" : "green";
+
   return (
-    <div style={{
-      position: "fixed", bottom: "20px", right: "20px",
-      background: bg, color: "white", padding: "10px 20px",
-      borderRadius: "5px", zIndex: 1000
-    }}>
+    <div className="snackbar" style={{ background: type === "error" ? "red" : "green" }}>
       {message}
     </div>
   );

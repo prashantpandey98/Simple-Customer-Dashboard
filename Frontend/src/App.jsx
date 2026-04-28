@@ -33,12 +33,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <CustomerForm fetchCustomers={fetchCustomers} />
-      {loading ? (
-        <Loader />
-      ) : (
-        <CustomerTable fetchCustomers={fetchCustomers} customers={customers} />
-      )}
+      <div className="app-container">
+        <CustomerForm fetchCustomers={fetchCustomers} />
+        {loading ? (
+          <Loader />
+        ) : (
+          <CustomerTable fetchCustomers={fetchCustomers} customers={customers} />
+        )}
+      </div>
       {snackbar && <Snackbar message={snackbar.message} type={snackbar.type} onClose={() => setSnackbar(null)} />}
     </>
   );

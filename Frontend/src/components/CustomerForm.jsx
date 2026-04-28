@@ -8,8 +8,6 @@ const fields = [
     { key: "phone", placeholder: "Phone", type: "tel" },
 ];
 
-const input = { width: "1fr", padding: "10px 14px", border: "1px solid #d1d5db", borderRadius: "8px", fontSize: "0.95rem", outline: "none", boxSizing: "border-box" };
-
 export default function CustomerForm({ fetchCustomers }) {
     const [form, setForm] = useState({ name: "", email: "", phone: "" });
     const [snackbar, setSnackbar] = useState(null);
@@ -34,12 +32,12 @@ export default function CustomerForm({ fetchCustomers }) {
 
     return (
         <>
-        <div style={{  margin: "2rem auto", padding: "1.5rem 2rem", background: "#fff", borderRadius: 12, boxShadow: "0 2px 16px rgba(0,0,0,0.08)" }}>
-            <form onSubmit={handleSubmit} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr auto", gap: "0.75rem", alignItems: "center" }}>
+        <div className="form-card">
+            <form onSubmit={handleSubmit} className="customer-form">
                 {fields.map((f) => (
-                    <input key={f.key} value={form[f.key]} onChange={update(f.key)} placeholder={f.placeholder} type={f.type} style={input} />
+                    <input key={f.key} value={form[f.key]} onChange={update(f.key)} placeholder={f.placeholder} type={f.type} />
                 ))}
-                <button type="submit" style={{ padding: "10px 20px", background: "linear-gradient(135deg, #302b63, #24243e)", color: "#fff", border: "none", borderRadius: 8, fontSize: "0.95rem", fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap" }}>+ Add</button>
+                <button type="submit" className="btn-add">+ Add</button>
             </form>
         </div>
         {snackbar && <Snackbar message={snackbar.message} type={snackbar.type} onClose={() => setSnackbar(null)} />}
