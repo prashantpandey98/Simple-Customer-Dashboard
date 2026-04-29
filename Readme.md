@@ -2,6 +2,12 @@
 
 Add, view, and delete customers. Built with React + Express. No database — data lives in memory.
 
+Added features like Loading, Deletion Confirmation Modal and Snackbar notification as well.
+Have validations in place as well both on Frontend and Backend.
+
+Enter the Name, Email and Phone Number and click on Add button to add it in the entry (POST).
+The list of customers will be displayed in the table below. You can also delete a customer by clicking on the Delete button next to their entry (DELETE).
+
 ---
 
 ## Setup
